@@ -1,19 +1,19 @@
 package coches;
 
+import coches.interfaces.Coche;
+import coches.printer.CochePrinter;
+import coches.utils.Audi;
+import coches.utils.Renault;
+
 public class Main {
     public static void main(String[] args) {
         Coche[] arrayCoches = {
-                new Coche("Renault"),
-                new Coche("Audi")
+                new Renault(),
+                new Audi()
         };
-        imprimirPrecioMedioCoche(arrayCoches);
-    }
 
-    public static void imprimirPrecioMedioCoche(Coche[] arrayCoches){
-        for (Coche coche : arrayCoches) {
-            if(coche.getMarca().equals("Renault")) System.out.println(18000);
-            if(coche.getMarca().equals("Audi")) System.out.println(25000);
-        }
+        CochePrinter printer = new CochePrinter(arrayCoches);
+        printer.imprimirPrecioMedioCoche();
     }
 
 }
